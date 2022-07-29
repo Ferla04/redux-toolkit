@@ -84,6 +84,16 @@ button:focus-visible {
   height: 100%;
 }
 
-.pokemon{
+.pokemon, .todo{
   padding: 50px;
+}
+
+.pokemon__list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pokemon__list li{
+  width: 200px;
 }
