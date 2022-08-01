@@ -8,12 +8,17 @@ export const todosApi = createApi({
   }),
   /*Diferentes funciones para traer la información */
   endpoints: ( builder ) => ({
+
     getTodos: builder.query({
       query: () => '/todos' // <-- esos todos se estan concatenando con la Url principal
+    }),
+
+    getTodoById: builder.query({
+      query: ( todoId = 1) => `/todos/${ todoId }`
     })
   })
 
 })
 /* El CreateApi de RTK nos crea un customhook */
 /* la funcion de los endPoints la convierte en un customhook */
-export const { useGetTodosQuery } = todosApi
+export const { useGetTodosQuery, useGetTodoByIdQuery } = todosApi
